@@ -1,0 +1,200 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+.hero-section__search > .form input.input--text,
+.hero-section__search > .form input {
+    min-width: 100%;
+    width: 100%;
+}
+
+.hero-section__search > .form label {
+    position: absolute;
+    left: -9999px;
+    }
+    
+.hero-section__search > .form input.input--text {
+width: 50rem;
+}
+.form__field--action > *:not(:last-child) {
+margin-right: 1rem;
+}
+.form__field--radio,
+.form__field--checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.form__field--radio p,
+.form__field--checkbox p {
+  margin-right: 3rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.form__field--radio input + label,
+.form__field--checkbox input + label {
+  display: inline-block;
+  margin-left: 1.5rem;
+  margin-right: 2rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  color: var(--color-text);
+}
+.form__field {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+.form__label,
+.form__field > label {
+display: block;
+margin-bottom: 0.5rem;
+color: var(--color-text);
+}
+textarea.input {
+    min-width: 24rem;
+    width: 100%;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--color-light);
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-bg);
+}
+</style>
+
+{% comment %} <section class="blog-area section_padding_100 mt-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <form action="" method="POST" style="margin-top: -10px;">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <div class="form__field">
+                    <label for="formInput#text">Text Field: </label>
+                    <input class="input input--text" id="formInput#text" type="text" name="text"
+                        placeholder="Enter text" />
+                </div>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+</section> {% endcomment %}
+
+<!-- <main class="formPage my-xl">
+    <div class="content-box">
+        <div class="formWrapper">
+            <a class="backButton" href="#"><i class="im im-angle-left"></i></a>
+            <br>
+
+            <form class="form" method="POST"> -->
+                <!-- Input:Text
+                <div class="form__field">
+                    <label for="formInput#text">Text Field: </label>
+                    <input class="input input--text" id="formInput#text" type="text" name="text"
+                        placeholder="Enter text" />
+                </div>
+
+    
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+            </form>
+        </div>
+    </div>
+</main> -->
+<section class="contact-area section_padding_100 mt-100">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- Contact Form Area -->
+            <div class="col-10">
+                <div class="contact-form-area">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" name="title" id="name" placeholder="Poem Title">
+                            </div>
+                            {% comment %} <div class="col-12 col-md-4">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                            </div> {% endcomment %}
+                            
+                            {% comment %} <div class="col-12 col-md-4">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+                            </div> {% endcomment %}
+                
+                            <div style="display: block;">
+                                <input type="file" class="form-control" name="image" id="subject" placeholder="Upload image">
+                            </div>
+                            <div class="col-12">
+                                <textarea name="description" class="form-control" id="message" cols="30" rows="10" placeholder="Description"></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn studio-btn mt-3"><img src="{% static 'img/core-img/logo-icon.png' %}" alt=""> Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Google Maps -->
+<div class="map-area">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-10">
+                <div id="googleMap"></div>
+                <!-- Contact Info -->
+                <div class="contact-core-info d-flex align-items-center wow fadeInLeftBig" data-wow-delay="1s" data-wow-duration="1000ms">
+                    <div class="contactInfo">
+                        <img src="{% static 'img/core-img/logo.png' %}" alt="">
+                        <!-- Single Footer Content -->
+                        <div class="single-footer-content">
+                            <img src="{% static 'img/core-img/map.png' %}" alt="">
+                            <a href="#">Centre of Labyrinth</a>
+                        </div>
+                        <!-- Single Footer Content -->
+                        <div class="single-footer-content">
+                            <img src="{% static 'img/core-img/smartphone.png' %}" alt="">
+                            <a href="#">+234 810 070 09517</a>
+                        </div>
+                        <!-- Single Footer Content -->
+                        <div class="single-footer-content">
+                            <img src="{% static 'img/core-img/envelope-2.png' %}" alt="">
+                            <a href="#">ajibadeyakubadebare@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Follow Me Instagram Area Start -->
+<section class="follow-me-instagram-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-11 ml-auto">
+                <div class="follow-me-title">
+                    <h5>Follow me @ Instagram</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Instagram Feeds Area -->
+    <div class="instagram-feeds-area owl-carousel">
+        {% for poem in poems %}
+        <div class="single-instagram-feeds">
+            <img src="{{poem.featured_image.url}}" alt="">
+            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% include 'footer.html' %}
+{% endblock %}

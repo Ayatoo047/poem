@@ -1,0 +1,57 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<!-- <img src="{{ poem.featured_image.url }}" alt="">
+{% comment %} <a href="{% url 'poem' poem.id %}">{{poem.title}}</a> -- {{poem.created|timesince}} --
+ <a href="{% url 'delete' poem.id %}">delete</a> --- <a href="{% url 'update' poem.id %}">update</a> {% endcomment %}
+ <hr>
+<br> -->
+<section class="welcome-area">
+    <div class="carousel h-100 slide" data-ride="carousel" id="welcomeSlider">
+        <!-- Carousel Inner -->
+        <div class="carousel-inner h-100">
+
+            {% for poem in poems %}
+            {% if forloop.first %}
+            <div class="carousel-item h-100 bg-img active" style="background-image: url({{poem.featured_image.url}});">
+                <a href="{% url 'poem' poem.id %}">
+                <div class="carousel-content h-100">
+                    <div class="slide-text">
+                        <span>{{poem.index}}.</span>
+                        <h2> {{poem.title}}</h2>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {%else%}
+            <div class="carousel-item h-100 bg-img" style="background-image: url({{poem.featured_image.url}});">
+                <a href="{% url 'poem' poem.id %}">
+                <div class="carousel-content h-100">
+                    <div class="slide-text">
+                        <span>{{poem.index}}.</span>
+                        <h2> {{poem.title}}</h2>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- Carousel Indicators -->
+        <ol class="carousel-indicators">
+            {% for poem in poems %}
+            {% if forloop.first %}
+            <li data-target="#welcomeSlider" data-slide-to="0" class="active bg-img" style="background-image: url({{poem.featured_image.url}});"></li>
+            {% else %}
+            <li data-target="#welcomeSlider" data-slide-to="{{poem.index|add:'-1'}}" class="bg-img" style="background-image: url({{poem.featured_image.url}});"></li>
+            {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

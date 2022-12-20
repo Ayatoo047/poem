@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Blog Area Start -->
+    <section class="blog-area section_padding_100 mt-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Single Blog Area -->
+                <div class="col-10">
+                    <div class="single-blog-area text-center mb-100 wow fadeInUpBig" data-wow-delay="100ms" data-wow-duration="1s">
+                        <div class="blog-thumbnail mb-100">
+                            <img src="{{poem.featured_image.url}}" alt="">
+                        </div>
+                        <div class="blog-content">
+                            <span></span>
+                            <h2>{{poem.title}}</h2>
+                            {% comment %} <a href="#" class="post-date">Dec 01, 2017</a> {% endcomment %}
+                            <a href="#" class="post-author">By AYATOO</a>
+                            <p>{{poem.description}}</p>
+                            <a href="#" class="btn studio-btn"><img src="{% static 'img/core-img/logo-icon.png' %}" alt=""> Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Blog Area -->
+            </div>
+            <!-- Pagination -->
+        </div>
+    </section>
+    <!-- Blog Area End -->
+
+{% include 'footer.html' %}
+{% endblock %}

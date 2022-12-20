@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+  <!-- Main Section -->
+  <section class="contact-area section_padding_100 mt-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <main class="messagePage my-xl">
+          <div class="content-box">
+            <div class="message">
+              <a class="backButton" href="inbox.html"><i class="im im-angle-left"></i></a>
+              <h2 class="message__subject">{{singlemessage.subject}}</h4>
+                <a href="profile.html" class="message__author">{{singlemessage.name}}</a><br>
+                <a href="profile.html" class="message__author">{{singlemessage.email}}</a>
+                <p class="message__date">{{singlemessage.created}}</p>
+                <div class="message__body">{{singlemessage.body}}</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+  {% endblock content %} 

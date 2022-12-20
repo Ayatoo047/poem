@@ -1,0 +1,101 @@
+{% load static %}
+<!-- Preloader -->
+<div id="preloader">
+    <div class="showbox">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+            </svg>
+        </div>
+    </div>
+    
+    <div class="questions-area text-center">
+        <p>Did you know?</p>
+        <ul>
+            <li>The largest photography competition is 353,768 entries.</li>
+            <li>Photography is the toughest profession in the world.</li>
+            <li>The world’s largest photo album by dimensions was 13 ft 11.5 in x 17 ft.</li>
+            <li>The world’s largest photo mosaic featured 176,175 pictures.</li>
+            <li>The world’s largest camera lens was a 5200mm lens attached to a canon.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Gradient Background Overlay -->
+<div class="gradient-background-overlay"></div>
+<!-- Header Area Start -->
+{% if page == 'poems' %}
+<header class="header-area">
+{% else %}
+<header class="header-area bg-img" style="background-image: url({% static 'img/bg-img/14.jpg' %});">
+{% endif %}
+
+    <div class="container-fluid h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 h-100">
+                <div class="main-menu h-100">
+                    <nav class="navbar h-100 navbar-expand-lg">
+                        <!-- Logo Area  -->
+                        <a class="navbar-brand" href="{% url 'poems' %}"><img src="{% static 'img/core-img/logo.png' %}" alt="Logo"></a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i> Menu</button>
+
+                        <div class="collapse navbar-collapse" id="studioMenu">
+                            <!-- Menu Area Start  -->
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'poems' %}">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    {% comment %} <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a> {% endcomment %}
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{% url 'poems' %}">Home</a>
+                                        <a class="dropdown-item" href="{% url 'about' %}">About</a>
+                                        {% if request.user.is_superuser%}
+                                        <a href="{% url 'create' %}">Upload New</a>
+                                        {% endif %}
+                                        <a class="dropdown-item" href="{% url 'allpoems' %}">All poems</a>
+                                        {% comment %} <a class="dropdown-item" href="blog.html">Blog</a> {% endcomment %}
+                                        <a class="dropdown-item" href="{% url 'contact' %}">Contact</a>
+                                        {% comment %} <a class="dropdown-item" href="elements.html">Elements</a> {% endcomment %}
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'allpoems' %}">All poems</a>
+                                </li>
+                                {% comment %} <li class="nav-item">
+                                    <a class="nav-link" href="blog.html">Blog</a>
+                                </li> {% endcomment %}
+                                {% comment %} {% if request.user.is_superuser%} {% endcomment %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'create' %}">Upload new</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'inbox' %}">Inbox</a>
+                                </li>
+                                {% comment %} {%endif%} {% endcomment %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact' %}">contact</a>
+                                </li>
+                            </ul>
+                            <!-- Search Form -->
+                            {% comment %} <div class="header-search-form ml-auto">
+                                <form action="#">
+                                    <input type="search" class="form-control" placeholder="Input your keyword then press enter..." id="search" name="search">
+                                    <input class="d-none" type="submit" value="submit">
+                                </form>
+                            </div> {% endcomment %}
+                            <!-- Search btn -->
+                            {% comment %} <div id="searchbtn"> {% endcomment %}
+                            {% comment %} <img src="{% static 'img/core-img/search.png' %}" alt=""> {% endcomment %}
+                            {% comment %} </div> {% endcomment %}
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

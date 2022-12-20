@@ -1,0 +1,107 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+    <!-- About Me Area Start -->
+    <section class="about-me-area mt-100 section_padding_100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="about-me-thumb">
+                        <img src="{% static 'img/bg-img/about-me.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="about-content mt-100 mb-100 text-center">
+                        <span></span>
+                        <h2>What can I tell you about me?</h2>
+                        <p>I, Ajibade, Yakub Adeabre (AYATOO) am a Centre of the Labyrinth. A code description for being an all in one. But today, I am a poet, a creative writer and an imaginative minded lad. I am a graduate of Botany and a prospective Genetist. Yeah, I almost forgot, I am a programmer too. Glad I didn't miss that cos I built this 'thing' myself. Enough about me, What about about you? Get in touch.</p>
+                    </div>
+                </div>
+{% comment %} 
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.1s">
+                                <img src="{% static 'img/core-img/heart.png' %}" alt="">
+                                <h5>Wedding Photography</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.4s">
+                                <img src="{% static 'img/core-img/photo-camera.png' %}" alt="">
+                                <h5>Studio Photography</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="single-service-area section_padding_0_100 text-center wow fadeInUp" data-wow-delay="0.9s">
+                                <img src="img/core-img/video-camera.png" alt="">
+                                <h5>Portraits Photography</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel lectus eu felis semper finibus ac eget ipsum. Lorem ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <!-- Pie Bars Area Start -->
+                    <div class="our-skills-area text-center">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="single-pie-bar" data-percent="75">
+                                    <canvas class="bar-circle" width="100" height="100"></canvas>
+                                    <h6>Fashion</h6>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="single-pie-bar" data-percent="83">
+                                    <canvas class="bar-circle" width="100" height="100"></canvas>
+                                    <h6>Portraits</h6>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="single-pie-bar" data-percent="25">
+                                    <canvas class="bar-circle" width="100" height="100"></canvas>
+                                    <h6>Studio</h6>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="single-pie-bar" data-percent="95">
+                                    <canvas class="bar-circle" width="100" height="100"></canvas>
+                                    <h6>Weddings</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </section>
+    <!-- About Me Area End -->
+
+    <!-- Follow Me Instagram Area Start -->
+    {% comment %} <section class="follow-me-instagram-area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-11 ml-auto">
+                    <div class="follow-me-title">
+                        <h5>Follow me @ Instagram</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Instagram Feeds Area -->
+        <div class="instagram-feeds-area owl-carousel">
+            {% for poem in poems %}
+            <div class="single-instagram-feeds">
+                <img src="{{poem.featured_image.url}}" alt="">
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section> {% endcomment %}
+    <!-- Follow Me Instagram Area End -->
+        <!-- Footer Area Start -->
+    {% include 'footer.html' %}
+        <!-- Footer Area End -->
+    {% endblock content %}
