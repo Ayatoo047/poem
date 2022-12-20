@@ -1,3 +1,3 @@
 # biuld_files.sh
-pip install -r requiremnts.txt
+pip install -r requirements.txt
 python3.9 manage.py collectstatic
