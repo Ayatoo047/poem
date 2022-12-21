@@ -1,6 +1,3 @@
-from enum import unique
-from statistics import mode
-from turtle import title
 from django.db import models
 import uuid
 
